@@ -2,7 +2,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
-{# 加载静态文件 #}
+ 加载静态文件
 {% load staticfiles %}
 
 <head>
@@ -27,8 +27,8 @@
             <a href="#">登录</a>
         </div>
         <div class="reg_form clearfix">
-            <form method="post">
-{#                {% csrf_token %}#}
+            <form method="post" action="{% url 'users:do_register' %}">
+                {% csrf_token %}
                 <ul>
                     <li>
                         <label>用户名:</label>
@@ -61,7 +61,7 @@
                 </ul>
             </form>
 
-            {# 显示出错信息 #}
+             显示出错信息
             <div style="color: red">{{ errmsg }}</div>
 
 
