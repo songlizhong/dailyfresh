@@ -13,12 +13,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 
 import os
-
 import tinymce
 from django.conf.global_settings import STATICFILES_DIRS, AUTH_USER_MODEL
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -31,10 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 AUTH_USER_MODEL = 'users.User'
-
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -89,7 +85,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dailyfresh.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -104,7 +99,6 @@ DATABASES = {
     }
 }
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -118,7 +112,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -126,3 +119,19 @@ STATIC_URL = '/static/'
 
 # 指定静态文件的目录
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# # 邮件发送配置
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'    # 导入邮件模块
+# EMAIL_HOST = 'smtp.163.com'                 # 邮箱服务器地址
+# EMAIL_PORT = 25                             # 邮箱服务器端口（默认都为25）
+# EMAIL_HOST_USER = '15889589509@163.com'       # 发件人（天天生鲜官方邮箱账号）
+# EMAIL_HOST_PASSWORD = 'slz812'           # 客户端授权码，非邮箱登录密码
+# EMAIL_FROM = '天天生鲜<15889589509@163.com>'   # 打开邮件显示在‘发件人’中的签名
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # 导入邮件模块
+EMAIL_HOST = 'smtp.163.com'  # 邮箱服务器地址
+EMAIL_PORT = 25  # 邮箱服务器端口（默认都为25）
+EMAIL_HOST_USER = 'islet1010@163.com'  # 发件人（天天生鲜官方邮箱账号）
+EMAIL_HOST_PASSWORD = 'python123'  # 客户端授权码，非邮箱登录密码
+EMAIL_FROM = '天天生鲜<islet1010@163.com>'  # 打开邮件显示在‘发件人’中的签名
