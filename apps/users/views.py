@@ -122,3 +122,13 @@ class ActiveView(View):
 
         # 响应请求
         return HttpResponse('激活成功，进入登录界面')
+
+
+class LoginView(View):
+    def get(self, request):
+        """进入登录界面"""
+        return render(request, 'login.html')
+
+    def post(self, request):
+        """处理登录逻辑"""
+        return HttpResponse('登录成功，进入首页')
